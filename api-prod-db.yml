@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CHOCOFLOWER.NET API PROD - RDS MySQL database
+
+Resources:
+
+  ApiProdDatabase:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      Engine: MySQL
+      DBSecurityGroups:
+      - Ref: MyDbSecurityByEC2SecurityGroup
+      - Ref: MyDbSecurityByCIDRIPGroup
+      AllocatedStorage: '5'
+      DBInstanceClass: db.m1.small
+      MasterUsername: MyName
+      MasterUserPassword: MyPassword
+    DeletionPolicy: Snapshot
+
+
+    

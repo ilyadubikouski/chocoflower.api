@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express v 0.02 (PROD)' });
+  res.send('Express is working properly v 0.01 (PROD)');
 });
 
 module.exports = router;
